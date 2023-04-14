@@ -1,0 +1,594 @@
+html, body {
+	height: 100%;
+}
+
+html {
+	background-color: #EDEBEB;
+	font-size: 100%;
+}
+
+@font-face {
+	font-family: linotype;
+	src: url("../fonts/Linotype Didot Roman.ttf");
+}
+
+/* .fixed-container{
+	position: fixed;
+} */
+
+/* body {
+	width: 60%;
+	min-width: 360px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 200%;
+	background-color: white;
+	padding: 2em;
+	margin-top: -2em;
+	font-size: 1.3rem;
+	font-family: BentonSansRegular, Helvetica, Arial, sans-serif;
+	font-weight: 150;
+	line-height: 1.4em;
+} */
+
+h1, h2 {
+	font-family: BentonSans;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+select {
+	font-size: 1.25rem;
+	font-family: BentonSansRegular, Helvetica, Arial, sans-serif;
+	font-weight: 150;
+}
+
+/* button {
+	background-color: #006298;
+	color: white;
+	border-radius: 8px;
+	padding-bottom: .2em;
+	padding-left: .6em;
+	padding-top: .2em;
+	padding-right: .6em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.3rem;
+} */
+
+table {
+	font-size: smaller;
+	margin: 0 auto;
+}
+
+td, th {
+	padding: .3em 1em;
+}
+
+aside {
+	font-size: .6em;
+	font-style: italic;
+}
+
+.topbar {
+	display: flex;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 3em;
+	background-color: #990000;
+}
+
+.site-logo {
+	align-self: center;
+}
+
+.navbar {
+	position: fixed;
+	margin: 13px;
+	left: 0em;
+	top: 4em;
+	background-color: white;
+	height: 12em;
+	width: 10.5em;
+}
+
+.nav-options a {
+	color: #990000;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12px;
+}
+
+/* .nav-options a:nth-of-type(3){
+	font-size: 16px;
+} */
+
+.nav-options i {
+	margin: 20px;
+}
+
+.nav-elements-right {
+	display: flex;
+	position: fixed;
+	/* align-self: center; */
+	right: 30px;
+	top: 10px;
+	color: white;
+}
+
+.nav-elements-right span {
+	margin-left: 20px;
+	align-self: center;
+}
+
+.nav-elements-right i:nth-of-type(3) {
+	font-size: 40px;
+	margin-left: 20px;
+	align-self: center;
+}
+
+.nav-elements-right i:nth-of-type(2) {
+	margin-left: 10px;
+	align-self: center;
+}
+
+.nav-elements-right i:nth-of-type(1) {
+	margin-left: 10px;
+	align-self: center;
+}
+
+.nav-elements-right i:nth-of-type(4) {
+	margin-left: 10px;
+	align-self: center;
+}
+
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+
+  .dropdown-content li {
+	list-style-type: none;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+	background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+
+/********************************************************************************************************/
+/** room-book.php **/
+
+.container-menu {
+	position: relative;
+	width: 1100px;
+	height: 900px;
+	
+	padding-top: 60px;
+}
+
+.row-title {
+	position: relative;
+	
+}
+
+.row-form {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.col-form-avail {
+	display: flex;
+	flex-direction: column;
+	width: 50%;	
+}
+
+.col-form {
+	width: 600px;
+	display: table;
+	text-align: center;
+	padding-left: 100px;
+}
+
+.col-avail {
+	height: 250px;
+	width: 600px;
+	padding-top: 30px;
+	padding-left: 50px;
+	
+}
+
+.p-memberList {
+	padding-left: 140px;
+}
+
+.member-list {
+	padding-left: 50px;
+}
+
+
+.col-users {
+	border: 2px solid #990000;
+	width: 400px;
+	display: table;
+	
+}
+
+.member-row {
+	display: table-row;
+}
+
+.input-member {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+.avail-table {
+	border: 1px solid #990000;
+}
+
+.avail-th {
+	border: 1px solid #990000;
+	background: #990000;
+	color: white;
+}
+
+.avail-tr {
+	border: 1px solid #990000;
+	background-color: #EDEBEB;
+}
+
+.member-list li {
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+.row-book-room {
+	/* padding-top: 150px; */
+	display: flex;
+	text-align: right;
+	padding-left: 800px;
+	padding-right: 300px;
+}
+
+.col-room-selection  {
+	padding-left: 10px;
+}
+
+
+.action-message {
+	color: #990000;
+	padding-left: 100px;
+}
+
+
+/********************************************************************************************************/
+/* createUser.php */
+
+.container-create-user{
+	float: left;
+	border: 1px solid #111111;
+	padding-top: 60px;
+	width: 107%;
+	flex-direction:row;	
+	margin-left:-35px;	
+}
+
+.circle {
+	border: 2px solid #EDEBEB;
+	border-radius: 100%;
+    background-color: #EDEBEB;
+	width: 200px;
+	height: 200px;
+	align-self: center;
+}
+
+.user-column {
+    display:flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+	
+}
+
+.user-row {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+
+.rvt-grid__item-3-sm-up {
+	background: #990000;
+}
+
+/********************************************************************************************************/
+/* My Groups Page */
+
+/* .group-data {
+	display: flex;
+	top: 3.5em;
+	position: relative;
+	flex-wrap: wrap;
+}
+.group-img-and_name {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	background-color: #990000;
+}
+.group-img-and_name img {
+	position: relative;
+	width: 150px;
+	border-radius: 30px;
+}
+.form_group_name {
+	position: absolute;
+	z-index: 999;
+	top: 160px;
+	width: 193px;
+	height: 35px;
+}
+.form_group_tags {
+	width: 200px;
+}
+.group-bio {
+	margin-left: 30px;
+}
+.form_group_bio{
+	text-align: center;
+	display:inline-block;
+}
+.tags {
+	display: flex;
+	justify-content: space-between;
+}
+.form-submit {
+	background-color: #006298;
+	color: #EDEBEB;
+	position: fixed;
+	top: 250px;
+	right: 300px;
+	justify-content: flex-end;
+}
+#form-save {
+	background-color: #006298;
+	color: #EDEBEB;
+	position: fixed;
+	top: 250px;
+	right: 250px;
+	justify-content: flex-end;
+}
+.reveal {
+	display: block !important;
+}
+.hide {
+	display: none !important;
+}
+.group-photo {
+	color: white;
+	padding: 20px;
+	text-align: center;
+	vertical-align:middle;
+}
+#edit-icon {
+	position: absolute;
+	background-color: transparent;
+	color: black;
+} */
+
+/* Drop down checkbox */
+
+/* .make-group-button{
+	left: 18px;
+	top: 200px;
+	font-size: 30px;
+}
+span a{
+	color: white;
+	text-decoration: none;
+}
+.dot {
+	position: relative;
+	left: 18px;
+	top: 10px;
+	font-size: 30px;
+} */
+
+.make-group-button {
+	display: flex;
+	position: fixed;
+	top: 80px;
+	right: 300px;
+	z-index: 999;
+}
+
+.dot {
+	/* position: relative; */
+	right: 10px;
+	top: 80px;
+	background-color: #990000;
+	font-size: 30px;
+	height: 55px;
+	width: 55px;
+	/* background-color: #bbb; */
+	border-radius: 50%;
+	/* display: inline-block; */
+}
+
+.dot a {
+	color: white;
+	position: relative;
+	top: 10px;
+	left: 15px;
+	text-decoration: none;
+}
+
+.user-column {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+}
+
+.user-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.home-button {
+	text-decoration: none;
+	color: white;
+	position: relative;
+	top:5px;
+}
+
+.container-view-user{
+        float: left;
+        padding-top: 60px;
+        width: 112%;
+        flex-direction:row;
+        margin-left:-35px;
+}
+
+.group-chat {
+        top: 3.5em;
+        position: relative;
+        flex-wrap: wrap;
+}
+
+
+/*****Create Event*******/
+
+.row-event-form {
+	/* border: 3px solid salmon; */
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    width: 100%;
+}
+
+.col-event-form {
+	/* border: 3px solid #006298; */
+	width: 600px;
+	display: table;
+	text-align: center;
+}
+
+
+.group-pic {
+        border: 8px solid #222222;
+        padding-top: 60px;
+        width: 100%;
+	flex-direction:column;
+}
+
+
+.group-members {
+	border: 1px solid #333333;
+        position: fixed;
+        left:30px;
+        top: 10px;
+        color: red;
+}
+
+.col-event-users {
+	border: 2px solid #990000;
+	width: 450px;
+	display: table;
+	
+}
+
+.p-event-members {
+	text-align: center;
+}
+
+
+
+.row-event-button {
+	float: right;
+
+}
+
+.event-users li {
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+/** Conditional Entry Groups Page **/
+.pending-users {
+	border: 3px solid salmon;
+}
+
+
+
+/*** Explore Page ***/
+
+.container-menu-explore {
+	position: relative;
+	width: 1100px;
+	height: 900px;
+	border: 3px solid red;
+	padding-top: 60px;
+}
+
+
+.row-title-users {
+	position: relative;
+}
+
+.row-title-groups {
+	position: relative;
+}
+
+.row-users {
+	border: 3px solid #006298;
+}
+
+
+.row-groups {
+	border: 3px solid #EDEBEB;
+}
