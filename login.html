@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="313810470802-gp3of845uqjneffvbrnneck5fnjcij7n.apps.googleusercontent.com" >
+    <title>UniLife</title>
+
+    <link rel="shortcut icon" type="images/png" href="images/favicon.ico" />
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://assets.uits.iu.edu/css/rivet/1.7.2/rivet.min.css">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <header class="rvt-header" role="banner">
+            <a class="rvt-skip-link" href="#main-content">Skip to content</a>
+            <!-- Trident -->
+            <div class="rvt-header__trident">
+                <svg class="rvt-header__trident-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 48"
+                    aria-hidden="true">
+                    <title id="iu-logo">Indiana University Logo</title>
+                    <rect width="41" height="48" fill="#900" />
+                    <polygon
+                        points="24.59 12.64 24.59 14.98 26.34 14.98 26.34 27.78 22.84 27.78 22.84 10.9 24.59 10.9 24.59 8.57 16.41 8.57 16.41 10.9 18.16 10.9 18.16 27.78 14.66 27.78 14.66 14.98 16.41 14.98 16.41 12.64 8.22 12.64 8.22 14.98 9.97 14.98 9.97 30.03 12.77 33.02 18.16 33.02 18.16 36.52 16.41 36.52 16.41 39.43 24.59 39.43 24.59 36.52 22.84 36.52 22.84 33.02 28 33.02 31.01 30.03 31.01 14.98 32.78 14.98 32.78 12.64 24.59 12.64"
+                        fill="#fff" />
+                </svg>
+            </div>
+            <!-- App title -->
+            <span class="rvt-header__title">
+                <a href="#">UniLife</a>
+            </span>
+
+            <div class="rvt-header__controls">
+                <nav class="rvt-header__main-nav" role="navigation">
+                    <a href="login.html" onclick="signOut();">Sign out</a>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+                </nav>
+            </div>
+    </header>
+
+    <div class="rvt-container rvt-container--freshman rvt-container--center">
+        <div class="rvt-grid">
+            <div class="rvt-grid__item ">
+                <h1 class="rvt-ts-xxl">Welcome to UniLife</h1>
+                <br>
+                <h1 class="rvt-ts-md" id="message">Please Sign in with you Indiana University email.</h1>
+                <br>
+                <form action="session.php" method="POST" >
+                    <input type="hidden" id="email" name="email" value="" />
+                    <button class="rvt-button">Proceed to UniLife</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId());
+        console.log("Name: " + profile.getName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+        var id_token = googleUser.getAuthResponse().id_token;
+
+        document.getElementById('email').value = profile.getEmail();
+        document.getElementById('message').innerHTML = "Hello <b>" + profile.getName() + "</b>, please click Proceed to UniLife button.";
+
+    }
+
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+
+
+
+</script>    
+</body>
+</html>
